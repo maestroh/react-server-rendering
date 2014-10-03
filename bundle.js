@@ -3,26 +3,8 @@
 var React = require('react');
 
 var index = React.createClass({displayName: 'index',
-  componentWillMount: function(){
-    console.log("componentWillMount");
-  },
-  componentDidMount: function(){
-    console.log("componentDidMount");
-  },
-  componentWillReceiveProps: function(){
-    console.log("componentWillReceiveProps");
-  },
-  shouldComponentUpdate: function(){
-    console.log("shouldComponentUpdate");
-  },
-  componentWillUpdate: function(){
-    console.log("componentWillUpdate");
-  },
-	componentDidUpdate: function(){
-    console.log("componentDidUpdate");
-  },
-  componentWillUnmount: function(){
-    console.log("componentWillUnmount");
+  handleClick: function(){
+    alert("here i am");
   },
 	render: function() {
     return (
@@ -32,7 +14,7 @@ var index = React.createClass({displayName: 'index',
       ), 
       React.DOM.body(null, 
         React.DOM.div(null, 
-        	React.DOM.input({type: "button", value: "text"})
+        	React.DOM.div({onMouseDown: this.handleClick}, "Here")
         )
       )
       )
@@ -41,18 +23,10 @@ var index = React.createClass({displayName: 'index',
 });
 
 if (typeof window !== "undefined") {
-  React.renderComponent(index(null), document.documentElement);
+  React.renderComponent(index(null), document);
 } else {
   module.exports = index;
 }
-
-
-  
-//        <input type="button" value="temp" onClick={this.handleClick} />
-
-// handleClick: function(){
-// 		alert("hello");
-//   },
 },{"react":146}],2:[function(require,module,exports){
 // shim for using process in browser
 

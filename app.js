@@ -5,6 +5,7 @@ var express = require('express'),
 		index = require('./index.jsx');
 
 var render = function(req, res){
+  console.log("render");
   var component = new index();
   var str = React.renderComponentToString(component);
   res.set('Content-Type', 'text/html');

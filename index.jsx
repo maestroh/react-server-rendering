@@ -2,6 +2,9 @@
 var React = require('react');
 
 var index = React.createClass({
+  handleClick: function(){
+    alert("here i am");
+  },
 	render: function() {
     return (
       <html>
@@ -10,7 +13,7 @@ var index = React.createClass({
       </head>
       <body>
         <div>
-        	<input type="button" value="text"/>
+        	<div onMouseDown={this.handleClick}>Here</div>
         </div>
       </body>
       </html>
@@ -19,7 +22,7 @@ var index = React.createClass({
 });
 
 if (typeof window !== "undefined") {
-  React.renderComponent(<index/>, document.documentElement);
+  React.renderComponent(<index/>, document);
 } else {
   module.exports = index;
 }
