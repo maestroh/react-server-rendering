@@ -3,7 +3,27 @@
 var React = require('react');
 
 var index = React.createClass({displayName: 'index',
-	
+  componentWillMount: function(){
+    console.log("componentWillMount");
+  },
+  componentDidMount: function(){
+    console.log("componentDidMount");
+  },
+  componentWillReceiveProps: function(){
+    console.log("componentWillReceiveProps");
+  },
+  shouldComponentUpdate: function(){
+    console.log("shouldComponentUpdate");
+  },
+  componentWillUpdate: function(){
+    console.log("componentWillUpdate");
+  },
+	componentDidUpdate: function(){
+    console.log("componentDidUpdate");
+  },
+  componentWillUnmount: function(){
+    console.log("componentWillUnmount");
+  },
 	render: function() {
     return (
       React.DOM.html(null, 
@@ -12,7 +32,7 @@ var index = React.createClass({displayName: 'index',
       ), 
       React.DOM.body(null, 
         React.DOM.div(null, 
-        	"hello"
+        	React.DOM.input({type: "button", value: "text"})
         )
       )
       )
